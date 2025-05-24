@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS courses (
     description TEXT,
     level TEXT,
     created_at INTEGER,
+    completion_percentage REAL DEFAULT 0.0,
     FOREIGN KEY (session_id) REFERENCES sessions(session_id)
 )
 """
@@ -32,6 +33,8 @@ CREATE TABLE IF NOT EXISTS sections (
     content TEXT,
     section_order INTEGER,
     created_at INTEGER,
+    is_completed INTEGER DEFAULT 0, -- Renamed from 'completed' to 'is_completed' for consistency
+    completed_at INTEGER,
     FOREIGN KEY (course_id) REFERENCES courses(course_id)
 )
 """
