@@ -3,6 +3,7 @@
 .env.dev
 .env.prod
 .env.backup
+.env.local
 venv
 .venv
 .vscode
