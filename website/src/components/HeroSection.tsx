@@ -24,20 +24,15 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in mb-8">
-              <Button
-                size="lg"
-                className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 text-lg font-inter mr-4"
+            <div className="animate-fade-in mb-12">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/OMGATE23/silk"
+                className="bg-gray-900 rounded-lg hover:bg-gray-800 text-white px-8 py-3 text-lg font-inter mr-4"
               >
                 Start Learning Now
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="px-8 py-4 text-lg font-inter"
-              >
-                See How It Works
-              </Button>
+              </a>
             </div>
 
             <div className="animate-fade-in">
