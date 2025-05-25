@@ -1,14 +1,10 @@
-# Detect shell
 SHELL := $(shell echo $$SHELL)
 
-# Default target
 .DEFAULT_GOAL := help
 
-# Directory variables
 BACKEND_DIR := backend
 FRONTEND_DIR := frontend
 
-# Phony targets
 .PHONY: help install run install-be run-be install-fe run-fe clean
 
 help:
