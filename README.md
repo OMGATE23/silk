@@ -53,90 +53,75 @@ Follow these steps to get Silk up and running on your local machine.
 - Node.js (LTS version recommended) & npm (or yarn)
 - Git
 
-### 1. Clone the Repository
+**🚀 1. Clone the Repository**
 
 ```bash
-git clone <https://github.com/OMGATE23/silk.git>
+git clone https://github.com/OMGATE23/silk.git
 cd silk
 ```
 
-### 2. Backend Setup
-
-The backend code is located in the `backend/` directory.
-a. **Navigate to the Backend Directory:**
-Run the following command in the terminal:
+⚙️ 2. Install System Requirements (Python, Node.js)
+Run the setup script from the project root:
 
 ```bash
-cd backend
+bash setup.sh
 ```
+This will:
 
-b.  **Create and Activate a Virtual Environment:**
-It's highly recommended to use a virtual environment to manage dependencies.
+- Check/install Python 3.12+
+- Check/install Node.js (LTS) and npm
+- Set up Environment Variables
+
+📦 3. Install Project Dependencies
+After system setup, run:
 
 ```bash
-python -m venv venv
-# On Windows
-.\\venv\\Scripts\\activate
-# On macOS/Linux
-source venv/bin/activate
-
+make install
 ```
+This will:
 
-c.  **Install Python Dependencies:**
-Run the following command to install all the dependencies
+- Create a Python virtual environment in backend/
+- Install backend Python dependencies via pip
+- Install frontend dependencies via npm in frontend/
+
+📝 4. Configure Environment Variables
+
+
+The setup file will configure the env but to change them simply do the following
+a. Backend Environment Variables
+Create a .env file in `backend` if not present:
 
 ```bash
-pip install -r requirements.txt
+touch backend/.env
 ```
+Add:
 
-d. **Set up Environment Variables:**
-Create a file named `.env` inside the `backend/` directory (i.e., `silk/backend/.env`). This file will hold your API keys and configuration.
-
-```
-GEMINI_MODEL=your_gemini_model_id_here_e.g._gemini-pro
+```bash
+GEMINI_MODEL=your_gemini_model_id_here_e.g._gemini-2.0-flash
 GEMINI_API_KEY=your_google_gemini_api_key_here
 DB_PATH=sqlite_db.db
 ```
-
-*Replace placeholders with your actual API keys and model IDs.*
-
-d.  **Run the Backend with Gunicorn:**
-From the **project root** (`silk/` directory):
+b. Frontend Environment Variables
+Create a .env file in `frontend` if not present:
 
 ```bash
-gunicorn -k gevent -w 1 main:app --bind 0.0.0.0:8000
+touch frontend/.env
 ```
 
-This command starts the Flask backend with Gunicorn on `http://localhost:8000`. Keep this terminal running.
-
-### 3. Frontend Setup
-
-The frontend code is located in the `frontend/` directory.
-
-a.  **Navigate to the Frontend Directory:**
-
+Add:
 ```bash
-cd frontend
-```
-
-b.  **Install Node.js Dependencies:**
-
-```bash
-npm install
-```
-
-c. **Add the required Environment Variables**
-Create a `.env` file and enter the following content
-
-```
 VITE_API_URL=http://localhost:8000
 ```
-
-d.  **Run the Frontend Development Server:**
+▶️ 5. Run the Application
+To start both backend and frontend servers concurrently:
 
 ```bash
-npm run dev
+make run
 ```
+
+Backend runs on: http://localhost:8000
+
+Frontend runs on: http://localhost:5173
 
 ## 🚀 Usage
 
