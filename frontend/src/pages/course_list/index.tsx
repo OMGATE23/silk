@@ -166,7 +166,7 @@ export default function CourseListPage() {
             </p>
           </div>
           <Link
-            to="/chat"
+            to="/create"
             className="mt-4 sm:mt-0 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg
                        flex items-center gap-2 shadow-sm
                        transition-all duration-300 ease-in-out transform hover:scale-105"

@@ -36,7 +36,7 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link
-              to="/chat"
+              to="/create"
               className="text-gray-600 text-base font-[300] hover:text-gray-900 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-100"
               onClick={closeMenu}
             >
@@ -84,11 +84,11 @@ const Header: React.FC = () => {
             </li>
             <li>
               <Link
-                to="/chat"
+                to="/create"
                 className="text-gray-800 text-2xl font-medium hover:text-indigo-600 transition-colors duration-200"
                 onClick={closeMenu}
               >
-                Chat
+                Create Course
               </Link>
             </li>
             <li>
