@@ -27,17 +27,25 @@ def home():
     db.health_check()
     return {"message": "Hello from Flask!"}
 
-@app.route('/course')
-def get_course():
+@app.route('/course', methods=["GET", "DELETE"])
+def course_handler():
     course_id = request.args.get('id')
     if not course_id:
         return jsonify({"error": "Missing 'id' query parameter"}), 400
 
-    course = db.get_course(course_id)
-    if course:
-        return jsonify(course)
-    else:
-        return jsonify({"error": "Course not found"}), 404
+    if request.method == "GET":
+        course = db.get_course(course_id)
+        if course:
+            return jsonify(course)
+        else:
+            return jsonify({"error": "Course not found"}), 404
+
+    elif request.method == "DELETE":
+        deleted = db.delete_course(course_id)
+        if deleted:
+            return jsonify({"message": f"Course with id {course_id} deleted successfully."}), 200
+        else:
+            return jsonify({"error": "Course not found"}), 404
 
 @app.route('/courses')
 def get_all_courses():
