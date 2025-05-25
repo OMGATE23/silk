@@ -53,14 +53,14 @@ Follow these steps to get Silk up and running on your local machine.
 - Node.js (LTS version recommended) & npm (or yarn)
 - Git
 
-**🚀 1. Clone the Repository**
+### 🚀 1. Clone the Repository
 
 ```bash
 git clone https://github.com/OMGATE23/silk.git
 cd silk
 ```
 
-⚙️ 2. Install System Requirements (Python, Node.js)
+### ⚙️ 2. Install System Requirements (Python, Node.js)
 Run the setup script from the project root:
 
 ```bash
@@ -72,7 +72,7 @@ This will:
 - Check/install Node.js (LTS) and npm
 - Set up Environment Variables
 
-📦 3. Install Project Dependencies
+### 📦 3. Install Project Dependencies
 After system setup, run:
 
 ```bash
@@ -84,7 +84,7 @@ This will:
 - Install backend Python dependencies via pip
 - Install frontend dependencies via npm in frontend/
 
-📝 4. Configure Environment Variables
+### 📝 4. Configure Environment Variables
 
 
 The setup file will configure the env but to change them simply do the following
@@ -112,7 +112,7 @@ Add:
 ```bash
 VITE_API_URL=http://localhost:8000
 ```
-▶️ 5. Run the Application
+### ▶️ 5. Run the Application
 To start both backend and frontend servers concurrently:
 
 ```bash
